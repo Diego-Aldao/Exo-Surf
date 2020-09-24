@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,8 @@
           box-sizing: border-box;
 }
 
-img {
+img,
+video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -17,10 +18,13 @@ img {
 body {
   overflow-x: hidden;
   font-family: var(--fuente-principal);
+  background: whitesmoke;
 }
 
 .contenido-centrado {
   padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -36,6 +40,7 @@ body {
 :root {
   --fuente-fantasia: "Permanent Marker", cursive;
   --fuente-principal: "Roboto", sans-serif;
+  --color-principal: #08d8de;
 }
 
 .btn-principal {
@@ -58,6 +63,32 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.btn-secundario {
+  max-width: 200px;
+  margin: 0 auto;
+  background: #08d8de;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  padding: 7px 15px;
+  border: 2px solid #08d8de;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
 }
 
 .nav-principal {
@@ -89,6 +120,26 @@ body {
   background: aqua;
   width: 50px;
   height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-principal .linea-hamburguesa {
+  width: 35px;
+  height: 4px;
+  background: black;
+  margin: 3px 0px;
 }
 
 @media (min-width: 768px) {
@@ -137,5 +188,107 @@ body {
     padding: 5px 15px;
     margin: 0px 0px 0px 55px;
   }
+}
+
+.header-principal {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 350px;
+      grid-template-rows: 350px;
+  padding-top: 100px;
+}
+
+.header-principal .descripcion-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.header-principal .titulo-principal {
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.header-principal .descripcion-principal {
+  text-align: center;
+  font-size: 0.9rem;
+  margin: 10px 0px 30px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+}
+
+@media (min-width: 768px) {
+  .header-principal {
+    padding-top: 0;
+    -ms-grid-columns: 100px 1fr 30px;
+        grid-template-columns: 100px 1fr 30px;
+    -ms-grid-rows: 500px;
+        grid-template-rows: 500px;
+  }
+  .header-principal .contenedor-desktop {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 450px;
+  }
+  .header-principal .titulo-principal {
+    text-align: left;
+    font-size: 5rem;
+  }
+  .header-principal .descripcion-principal {
+    text-align: left;
+  }
+  .header-principal .btn-secundario {
+    margin: 0;
+  }
+  .header-principal .video-desktop {
+    display: block;
+    background: aqua;
+  }
+  .header-principal .texto-vertical {
+    display: block;
+    background: red;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-principal {
+    -ms-grid-rows: 600px;
+        grid-template-rows: 600px;
+  }
+  .header-principal .contenedor-desktop {
+    bottom: 100px;
+  }
+}
+
+.texto-vertical {
+  position: relative;
+}
+
+.txt-vertical {
+  background: aqua;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  position: absolute;
+  width: 250px;
+  height: 20px;
+  bottom: 50%;
+  left: -110px;
 }
 /*# sourceMappingURL=main.css.map */
