@@ -449,4 +449,103 @@ body {
     grid-row: 1 / 2;
   }
 }
+
+.trabajo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.trabajo .carta-trabajo {
+  padding: 25px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.trabajo .logo {
+  background: black;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.trabajo .texto-comun {
+  text-align: center;
+  margin: 20px 0px;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .trabajo {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 40px 1fr;
+        grid-template-columns: 40px 1fr;
+  }
+  .trabajo .swiper-slide {
+    background: red;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    position: relative;
+    height: 450px;
+  }
+  .trabajo .texto-vertical {
+    background: green;
+    display: block;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+  }
+  .trabajo .img-trabajo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    display: block;
+    background: blue;
+  }
+  .trabajo .carta-trabajo {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    position: absolute;
+    top: 20px;
+    left: -150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .trabajo .swiper-slide {
+    height: 500px;
+  }
+  .trabajo .carta-trabajo {
+    top: 25px;
+    left: -170px;
+    max-width: 350px;
+    height: 450px;
+  }
+  .trabajo .logo {
+    margin-bottom: 45px;
+  }
+  .trabajo .texto-comun {
+    margin-bottom: 40px;
+    line-height: 2;
+  }
+}
 /*# sourceMappingURL=main.css.map */

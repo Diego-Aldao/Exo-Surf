@@ -334,3 +334,80 @@ body {
     }
   }
 }
+
+//INICIO SECCION TRABAJO
+
+.trabajo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .carta-trabajo {
+    padding: 25px 10px;
+    @include flexbox(column, flex-start, center);
+    background: white;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .logo {
+    background: black;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .texto-comun {
+    text-align: center;
+    margin: 20px 0px;
+    line-height: 1.8;
+  }
+}
+
+@media (min-width: 768px) {
+  .trabajo {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    .swiper-slide {
+      background: red;
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      grid-template-rows: 1fr;
+      position: relative;
+      height: 450px;
+    }
+    .texto-vertical {
+      background: green;
+      display: block;
+      grid-column: 1 / 2;
+    }
+    .img-trabajo {
+      grid-column: 1 / 2;
+      display: block;
+      background: blue;
+    }
+    .carta-trabajo {
+      grid-column: 2 / 3;
+      position: absolute;
+      top: 20px;
+      left: -150px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .trabajo {
+    .swiper-slide {
+      height: 500px;
+    }
+    .carta-trabajo {
+      top: 25px;
+      left: -170px;
+      max-width: 350px;
+      height: 450px;
+    }
+    .logo {
+      margin-bottom: 45px;
+    }
+    .texto-comun {
+      margin-bottom: 40px;
+      line-height: 2;
+    }
+  }
+}
