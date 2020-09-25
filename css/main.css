@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +10,8 @@
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 video {
@@ -25,6 +25,7 @@ body {
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: #ebebeb;
+  background: white;
 }
 
 .contenido-centrado {
@@ -61,29 +62,30 @@ body {
 :root {
   --fuente-fantasia: "Permanent Marker", cursive;
   --fuente-principal: "Poppins", sans-serif;
-  --color-principal: #08d8de;
+  --color-principal: #00c3e6;
+  --color-titulos: rgb(20, 20, 20);
+  --color-textos: rgb(131, 131, 131);
 }
 
 .btn-principal {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.8rem;
-  padding: 10px 0px;
-  border: 2px solid #00e0e0;
+  padding: 7px 15px;
+  border: 2px solid var(--color-principal);
   text-align: center;
-  width: 120px;
 }
 
 .btn-secundario {
   max-width: 200px;
   margin: 0 auto;
-  background: #00d2f7;
-  font-weight: 900;
+  background: var(--color-principal);
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 3px;
   padding: 7px 15px;
-  border: 2px solid #00d2f7;
+  border: 2px solid var(--color-principal);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,12 +100,14 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  -webkit-box-shadow: 5px 5px 5px rgba(63, 63, 63, 0.356);
+          box-shadow: 5px 5px 5px rgba(63, 63, 63, 0.356);
 }
 
 .nav-principal {
-  background: red;
   width: 100%;
   height: 70px;
+  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,13 +124,12 @@ body {
 }
 
 .nav-principal .logo {
-  background: green;
   width: 70px;
-  height: 100%;
+  height: 70px;
+  border: 1px solid black;
 }
 
 .nav-principal .hamburguesa {
-  background: aqua;
   width: 50px;
   height: 50px;
   display: -webkit-box;
@@ -147,11 +150,14 @@ body {
 .nav-principal .linea-hamburguesa {
   width: 35px;
   height: 4px;
-  background: black;
+  background: var(--color-principal);
   margin: 3px 0px;
 }
 
 @media (min-width: 768px) {
+  .nav-principal {
+    height: 140px;
+  }
   .nav-principal .hamburguesa {
     display: none;
   }
@@ -169,12 +175,10 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: aqua;
     width: calc(100% - 50px);
     height: 100%;
   }
   .nav-principal .contenedor-links {
-    background: blue;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -193,9 +197,11 @@ body {
     list-style-type: none;
   }
   .nav-principal .links {
-    background: white;
     padding: 5px 15px;
-    margin: 0px 0px 0px 55px;
+    margin: 0px 0px 0px 25px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 900;
   }
 }
 
@@ -204,9 +210,10 @@ body {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 350px;
-      grid-template-rows: 350px;
-  padding-top: 150px;
+  padding-top: 50px;
+  padding-bottom: 200px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #f0f0f0));
+  background: linear-gradient(white 50%, #f0f0f0 50%);
 }
 
 .header-principal .descripcion-header {
@@ -226,11 +233,19 @@ body {
   position: relative;
 }
 
+.header-principal .logo {
+  width: 120px;
+  height: 120px;
+  background: red;
+  margin: 0 auto 30px;
+}
+
 .header-principal .titulo-principal {
   text-transform: uppercase;
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 1;
   text-align: center;
+  font-weight: 900;
 }
 
 .header-principal .descripcion-principal {
@@ -247,14 +262,18 @@ body {
 }
 
 .header-principal .txt-vertical {
-  background: aqua;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   position: absolute;
-  width: 250px;
+  width: 300px;
   height: 20px;
   bottom: 50%;
-  left: -110px;
+  left: -135px;
+  font-weight: 900;
+  color: #3d3d3d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 768px) {
@@ -271,6 +290,9 @@ body {
     bottom: 50px;
     width: 450px;
   }
+  .header-principal .logo {
+    display: none;
+  }
   .header-principal .titulo-principal {
     text-align: left;
     font-size: 6rem;
@@ -283,11 +305,9 @@ body {
   }
   .header-principal .video-desktop {
     display: block;
-    background: aqua;
   }
   .header-principal .texto-vertical {
     display: block;
-    background: red;
   }
 }
 
@@ -302,9 +322,9 @@ body {
 }
 
 .ofertas {
-  border-top: 1px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
+  background: #f0f0f0;
 }
 
 .ofertas .img-principal {
@@ -394,7 +414,7 @@ body {
   }
   .ofertas .marcas {
     display: block;
-    background: red;
+    border: 1px solid black;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
@@ -453,6 +473,8 @@ body {
 .trabajo {
   padding-top: 50px;
   padding-bottom: 50px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f0f0f0), color-stop(80%, rgba(255, 255, 255, 0.89)));
+  background: linear-gradient(#f0f0f0 50%, rgba(255, 255, 255, 0.89) 80%);
 }
 
 .trabajo .carta-trabajo {
@@ -476,7 +498,7 @@ body {
 }
 
 .trabajo .logo {
-  background: black;
+  border: 1px solid black;
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
@@ -496,7 +518,6 @@ body {
         grid-template-columns: 40px 1fr;
   }
   .trabajo .swiper-slide {
-    background: red;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 3fr 1fr;
@@ -507,7 +528,6 @@ body {
     height: 450px;
   }
   .trabajo .texto-vertical {
-    background: green;
     display: block;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -518,7 +538,7 @@ body {
     -ms-grid-column-span: 1;
     grid-column: 1 / 2;
     display: block;
-    background: blue;
+    background: black;
   }
   .trabajo .carta-trabajo {
     -ms-grid-column: 2;
@@ -553,6 +573,8 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   min-height: 450px;
+  background: rgba(255, 255, 255, 0.897);
+  position: relative;
 }
 
 .about .descripcion-about {
@@ -572,7 +594,8 @@ body {
   text-align: center;
   max-width: 400px;
   margin: 0 auto;
-  background: aqua;
+  position: relative;
+  z-index: 2;
 }
 
 .about .titulos-secciones {
@@ -580,10 +603,23 @@ body {
   font-size: 3.4rem;
   line-height: 1;
   max-width: 300px;
+  font-weight: 900;
 }
 
 .about .texto-comun {
   margin: 10px 0px 20px;
+  width: 90%;
+}
+
+.about:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 170%;
+  background: url(/video/bg-about.webp) center/cover no-repeat;
+  z-index: -1;
 }
 
 @media (min-width: 768px) {
@@ -605,10 +641,19 @@ body {
   .about .img-about {
     background: black;
     display: block;
+    position: relative;
+    z-index: 2;
   }
   .about .texto-vertical {
     display: block;
-    background: aqua;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1100px) {
+  .about .texto-comun {
+    width: 460px;
   }
 }
 

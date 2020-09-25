@@ -7,7 +7,7 @@
 img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 video {
   width: 100%;
@@ -18,6 +18,7 @@ body {
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: rgb(235, 235, 235);
+  background: white;
 }
 
 .contenido-centrado {
@@ -51,11 +52,13 @@ body {
 //FUENTES Y COLORES
 
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
 :root {
   --fuente-fantasia: "Permanent Marker", cursive;
   --fuente-principal: "Poppins", sans-serif;
-  --color-principal: #08d8de;
+  --color-principal: #00c3e6;
+  --color-titulos: rgb(20, 20, 20);
+  --color-textos: rgb(131, 131, 131);
 }
 
 //MIXINS
@@ -72,38 +75,37 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   font-size: 0.8rem;
-  padding: 10px 0px;
-  border: 2px solid rgb(0, 224, 224);
+  padding: 7px 15px;
+  border: 2px solid var(--color-principal);
   text-align: center;
-  width: 120px;
 }
 .btn-secundario {
   max-width: 200px;
   margin: 0 auto;
-  background: rgb(0, 210, 247);
-  font-weight: 900;
+  background: var(--color-principal);
+  font-weight: 700;
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 3px;
   padding: 7px 15px;
-  border: 2px solid rgb(0, 210, 247);
+  border: 2px solid var(--color-principal);
   @include flexbox(row, center, center);
   color: rgb(255, 255, 255);
+  box-shadow: 5px 5px 5px rgba(63, 63, 63, 0.356);
 }
 //INICIO NAVEGACION PRINCIPAL
 
 .nav-principal {
-  background: red;
   width: 100%;
   height: 70px;
+  background: white;
   @include flexbox(row, space-between, center);
   .logo {
-    background: green;
     width: 70px;
-    height: 100%;
+    height: 70px;
+    border: 1px solid black;
   }
   .hamburguesa {
-    background: aqua;
     width: 50px;
     height: 50px;
     @include flexbox(column, center, center);
@@ -111,7 +113,7 @@ body {
   .linea-hamburguesa {
     width: 35px;
     height: 4px;
-    background: black;
+    background: var(--color-principal);
     margin: 3px 0px;
   }
 }
@@ -120,26 +122,27 @@ body {
 
 @media (min-width: 768px) {
   .nav-principal {
+    height: 140px;
     .hamburguesa {
       display: none;
     }
     .nav-desktop {
       @include flexbox(row, space-between, center);
-      background: aqua;
       width: calc(100% - 50px);
       height: 100%;
     }
     .contenedor-links {
-      background: blue;
       @include flexbox(row, flex-start, center);
       width: 70%;
       height: 100%;
       list-style-type: none;
     }
     .links {
-      background: white;
       padding: 5px 15px;
-      margin: 0px 0px 0px 55px;
+      margin: 0px 0px 0px 25px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      font-weight: 900;
     }
   }
 }
@@ -149,17 +152,26 @@ body {
 .header-principal {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 350px;
-  padding-top: 150px;
+  padding-top: 50px;
+  padding-bottom: 200px;
+  background: linear-gradient(white 50%, rgb(240, 240, 240) 50%);
+
   .descripcion-header {
     @include flexbox(column, flex-start, center);
     position: relative;
   }
+  .logo {
+    width: 120px;
+    height: 120px;
+    background: red;
+    margin: 0 auto 30px;
+  }
   .titulo-principal {
     text-transform: uppercase;
-    font-size: 4.5rem;
+    font-size: 4rem;
     line-height: 1;
     text-align: center;
+    font-weight: 900;
   }
   .descripcion-principal {
     text-align: center;
@@ -173,13 +185,17 @@ body {
     position: relative;
   }
   .txt-vertical {
-    background: aqua;
     transform: rotate(90deg);
     position: absolute;
-    width: 250px;
+    width: 300px;
     height: 20px;
     bottom: 50%;
-    left: -110px;
+    left: -135px;
+    font-weight: 900;
+    color: rgb(61, 61, 61);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
   }
 }
 
@@ -196,6 +212,9 @@ body {
       bottom: 50px;
       width: 450px;
     }
+    .logo {
+      display: none;
+    }
     .titulo-principal {
       text-align: left;
       font-size: 6rem;
@@ -208,11 +227,9 @@ body {
     }
     .video-desktop {
       display: block;
-      background: aqua;
     }
     .texto-vertical {
       display: block;
-      background: red;
     }
   }
 }
@@ -229,9 +246,9 @@ body {
 //INICIO OFERTAS
 
 .ofertas {
-  border-top: 1px solid black;
   padding-top: 50px;
   padding-bottom: 50px;
+  background: rgb(240, 240, 240);
   .img-principal {
     width: 100%;
     height: 500px;
@@ -296,7 +313,7 @@ body {
     grid-template-rows: 700px 200px;
     .marcas {
       display: block;
-      background: red;
+      border: 1px solid black;
       grid-row: 2 / 3;
     }
     .swiper-slider {
@@ -340,6 +357,10 @@ body {
 .trabajo {
   padding-top: 50px;
   padding-bottom: 50px;
+  background: linear-gradient(
+    rgb(240, 240, 240) 50%,
+    rgba(255, 255, 255, 0.89) 80%
+  );
   .carta-trabajo {
     padding: 25px 10px;
     @include flexbox(column, flex-start, center);
@@ -348,7 +369,7 @@ body {
     margin: 0 auto;
   }
   .logo {
-    background: black;
+    border: 1px solid black;
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
@@ -365,7 +386,6 @@ body {
     display: grid;
     grid-template-columns: 40px 1fr;
     .swiper-slide {
-      background: red;
       display: grid;
       grid-template-columns: 3fr 1fr;
       grid-template-rows: 1fr;
@@ -373,14 +393,13 @@ body {
       height: 450px;
     }
     .texto-vertical {
-      background: green;
       display: block;
       grid-column: 1 / 2;
     }
     .img-trabajo {
       grid-column: 1 / 2;
       display: block;
-      background: blue;
+      background: black;
     }
     .carta-trabajo {
       grid-column: 2 / 3;
@@ -418,23 +437,39 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   min-height: 450px;
+  background: rgba(255, 255, 255, 0.897);
+  position: relative;
   .descripcion-about {
     @include flexbox(column, center, center);
     text-align: center;
     max-width: 400px;
     margin: 0 auto;
-    background: aqua;
+    position: relative;
+    z-index: 2;
   }
   .titulos-secciones {
     text-transform: uppercase;
     font-size: 3.4rem;
     line-height: 1;
     max-width: 300px;
+    font-weight: 900;
   }
   .texto-comun {
     margin: 10px 0px 20px;
+    width: 90%;
   }
 }
+.about:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 170%;
+  background: url(/video/bg-about.webp) center / cover no-repeat;
+  z-index: -1;
+}
+
 @media (min-width: 768px) {
   .about {
     display: grid;
@@ -448,10 +483,21 @@ body {
     .img-about {
       background: black;
       display: block;
+      position: relative;
+      z-index: 2;
     }
     .texto-vertical {
       display: block;
-      background: aqua;
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .about {
+    .texto-comun {
+      width: 460px;
     }
   }
 }
