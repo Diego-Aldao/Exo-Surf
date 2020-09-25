@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -60,7 +60,7 @@ body {
 
 :root {
   --fuente-fantasia: "Permanent Marker", cursive;
-  --fuente-principal: "Roboto", sans-serif;
+  --fuente-principal: "Poppins", sans-serif;
   --color-principal: #08d8de;
 }
 
@@ -546,6 +546,69 @@ body {
   .trabajo .texto-comun {
     margin-bottom: 40px;
     line-height: 2;
+  }
+}
+
+.about {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 450px;
+}
+
+.about .descripcion-about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  background: aqua;
+}
+
+.about .titulos-secciones {
+  text-transform: uppercase;
+  font-size: 3.4rem;
+  line-height: 1;
+  max-width: 200px;
+}
+
+.about .texto-comun {
+  margin: 10px 0px 20px;
+}
+
+@media (min-width: 768px) {
+  .about {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 20px;
+        grid-template-columns: 1fr 1fr 20px;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .about .descripcion-about {
+    text-align: left;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: 0;
+  }
+  .about .img-about {
+    background: black;
+    display: block;
+  }
+  .about .texto-vertical {
+    display: block;
+    background: aqua;
   }
 }
 /*# sourceMappingURL=main.css.map */
