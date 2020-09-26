@@ -270,7 +270,7 @@ body {
       grid-template-columns: 1fr;
   padding-top: 50px;
   padding-bottom: 200px;
-  background: url("/video/header-bg-movil.webp") center/cover no-repeat;
+  background: url("/images/header-bg-movil.webp") center/cover no-repeat;
   position: relative;
 }
 
