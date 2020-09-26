@@ -24,7 +24,6 @@ body {
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: #ebebeb;
-  background: white;
 }
 
 .contenido-centrado {
@@ -235,8 +234,8 @@ body {
       grid-template-columns: 1fr;
   padding-top: 50px;
   padding-bottom: 200px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #f0f0f0));
-  background: linear-gradient(white 50%, #f0f0f0 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #ebebeb));
+  background: linear-gradient(white 50%, #ebebeb 50%);
 }
 
 .header-principal .descripcion-header {
@@ -328,7 +327,7 @@ body {
 .ofertas {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #f0f0f0;
+  background: #ebebeb;
 }
 
 .ofertas .img-principal {
@@ -479,8 +478,8 @@ body {
 .trabajo {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f0f0f0), color-stop(50%, white));
-  background: linear-gradient(#f0f0f0 50%, white 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ebebeb), color-stop(50%, white));
+  background: linear-gradient(#ebebeb 50%, white 50%);
   position: relative;
 }
 
@@ -550,7 +549,7 @@ body {
     -ms-grid-column-span: 1;
     grid-column: 1 / 2;
     display: block;
-    background: black;
+    background: url("/video/AIPAAWA-9784_600x600.webp") center/cover no-repeat;
   }
   .trabajo .carta-trabajo {
     -ms-grid-column: 2;

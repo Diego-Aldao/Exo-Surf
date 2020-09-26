@@ -18,7 +18,6 @@ body {
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: rgb(235, 235, 235);
-  background: white;
 }
 
 .contenido-centrado {
@@ -174,7 +173,7 @@ body {
   grid-template-columns: 1fr;
   padding-top: 50px;
   padding-bottom: 200px;
-  background: linear-gradient(white 50%, rgb(240, 240, 240) 50%);
+  background: linear-gradient(white 50%, rgb(235, 235, 235) 50%);
 
   .descripcion-header {
     @include flexbox(column, flex-start, center);
@@ -252,7 +251,7 @@ body {
 .ofertas {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: rgb(240, 240, 240);
+  background: rgb(235, 235, 235);
   .img-principal {
     width: 100%;
     height: 500px;
@@ -363,7 +362,7 @@ body {
 .trabajo {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: linear-gradient(rgb(240, 240, 240) 50%, white 50%);
+  background: linear-gradient(rgb(235, 235, 235) 50%, white 50%);
   position: relative;
   .carta-trabajo {
     padding: 25px 10px;
@@ -406,7 +405,8 @@ body {
     .img-trabajo {
       grid-column: 1 / 2;
       display: block;
-      background: black;
+      background: url("/video/AIPAAWA-9784_600x600.webp") center / cover
+        no-repeat;
     }
     .carta-trabajo {
       grid-column: 2 / 3;
