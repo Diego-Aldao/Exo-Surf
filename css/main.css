@@ -9,8 +9,8 @@
 img {
   width: 100%;
   height: 100%;
-  -o-object-fit: fill;
-     object-fit: fill;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 video {
@@ -34,7 +34,7 @@ body {
 
 @media (min-width: 768px) {
   .contenido-centrado {
-    padding: 0 40px;
+    padding: 0 50px;
   }
 }
 
@@ -45,9 +45,10 @@ body {
 .mini-texto {
   text-transform: uppercase;
   font-weight: 900;
-  color: #00c3e6;
+  color: var(--color-principal);
   text-align: left;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .texto-comun {
@@ -65,15 +66,16 @@ body {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   position: absolute;
-  width: 300px;
+  width: 348px;
+  left: -160px;
   height: 20px;
   bottom: 50%;
-  left: -135px;
   font-weight: 900;
   color: #3d3d3d;
   letter-spacing: 3px;
   text-transform: uppercase;
   font-size: 0.8rem;
+  text-align: center;
 }
 
 @font-face {
@@ -84,7 +86,7 @@ body {
 :root {
   --fuente-fantasia: "fantasia";
   --fuente-principal: "Poppins", sans-serif;
-  --color-principal: #00c3e6;
+  --color-principal: #02d1d8;
   --color-titulos: rgb(20, 20, 20);
   --color-textos: rgb(131, 131, 131);
 }
@@ -129,7 +131,6 @@ body {
 .nav-principal {
   width: 100%;
   height: 70px;
-  background: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,7 +149,6 @@ body {
 .nav-principal .logo {
   width: 70px;
   height: 70px;
-  border: 1px solid black;
 }
 
 .nav-principal .hamburguesa {
@@ -172,13 +172,20 @@ body {
 .nav-principal .linea-hamburguesa {
   width: 35px;
   height: 4px;
-  background: var(--color-principal);
+  background: var(--color-titulos);
   margin: 3px 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 @media (min-width: 768px) {
   .nav-principal {
     height: 140px;
+    background: white;
+  }
+  .nav-principal .logo {
+    width: 90px;
+    height: 90px;
   }
   .nav-principal .hamburguesa {
     display: none;
@@ -234,8 +241,7 @@ body {
       grid-template-columns: 1fr;
   padding-top: 50px;
   padding-bottom: 200px;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #ebebeb));
-  background: linear-gradient(white 50%, #ebebeb 50%);
+  background: #ebebeb;
 }
 
 .header-principal .descripcion-header {
@@ -258,7 +264,6 @@ body {
 .header-principal .logo {
   width: 120px;
   height: 120px;
-  background: red;
   margin: 0 auto 30px;
 }
 
@@ -279,13 +284,15 @@ body {
   letter-spacing: 0px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 850px) {
   .header-principal {
     padding-top: 0;
     -ms-grid-columns: 100px 1fr 30px;
         grid-template-columns: 100px 1fr 30px;
     -ms-grid-rows: 500px;
         grid-template-rows: 500px;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(45%, white), color-stop(45%, #ebebeb));
+    background: linear-gradient(white 45%, #ebebeb 45%);
   }
   .header-principal .contenedor-desktop {
     position: absolute;
@@ -309,6 +316,10 @@ body {
   .header-principal .video-desktop {
     display: block;
   }
+  .header-principal .video-desktop img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
   .header-principal .texto-vertical {
     display: block;
   }
@@ -320,7 +331,7 @@ body {
         grid-template-rows: 600px;
   }
   .header-principal .contenedor-desktop {
-    bottom: 100px;
+    bottom: 95px;
   }
 }
 
@@ -333,6 +344,11 @@ body {
 .ofertas .img-principal {
   width: 100%;
   height: 500px;
+}
+
+.ofertas .imgss {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .ofertas .btn-principal {
@@ -397,6 +413,7 @@ body {
 .ofertas .descripcion-oferta .btn-principal {
   display: block;
   letter-spacing: 2px;
+  max-width: 150px;
 }
 
 .ofertas .mini-texto {
@@ -419,10 +436,36 @@ body {
   }
   .ofertas .marcas {
     display: block;
-    border: 1px solid black;
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     grid-row: 2 / 3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+  .ofertas .item-marca {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .ofertas .texto-fantasia {
+    font-family: var(--fuente-fantasia);
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: #9c9c9c;
   }
   .ofertas .swiper-slider {
     display: -ms-grid;
@@ -440,7 +483,7 @@ body {
     grid-column: 2 / 3;
     margin: 0;
     width: 100%;
-    left: -70px;
+    left: -90px;
   }
   .ofertas .img-principal {
     -ms-grid-column: 1;
@@ -452,9 +495,8 @@ body {
     position: relative;
     height: 700px;
   }
-  .ofertas .imgss {
-    -o-object-fit: fill;
-       object-fit: fill;
+  .ofertas .descripcion-oferta {
+    margin-left: 0;
   }
 }
 
@@ -472,6 +514,10 @@ body {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: (1fr)[5];
+        grid-template-rows: repeat(5, 1fr);
   }
 }
 
@@ -499,15 +545,21 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background: white;
+  width: 100%;
   max-width: 300px;
   margin: 0 auto;
+  -webkit-box-shadow: 1px 1px 5px #d4d4d4;
+          box-shadow: 1px 1px 5px #d4d4d4;
 }
 
 .trabajo .logo {
-  border: 1px solid black;
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
+}
+
+.trabajo .mini-texto {
+  text-align: center;
 }
 
 .trabajo .texto-comun {
@@ -519,6 +571,10 @@ body {
 .trabajo .txt-vertical {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+  width: 500px;
+  z-index: 99;
+  left: -230px;
+  bottom: 50%;
 }
 
 @media (min-width: 768px) {
@@ -531,12 +587,12 @@ body {
   .trabajo .swiper-slide {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 3fr 1fr;
-        grid-template-columns: 3fr 1fr;
+    -ms-grid-columns: 4fr 1fr;
+        grid-template-columns: 4fr 1fr;
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
     position: relative;
-    height: 450px;
+    height: 500px;
   }
   .trabajo .texto-vertical {
     display: block;
@@ -556,20 +612,22 @@ body {
     -ms-grid-column-span: 1;
     grid-column: 2 / 3;
     position: absolute;
-    top: 20px;
-    left: -150px;
+    top: 30px;
+    left: -220px;
+    min-width: 350px;
+    max-width: 400px;
   }
 }
 
 @media (min-width: 1024px) {
   .trabajo .swiper-slide {
-    height: 500px;
+    height: 550px;
+    -ms-grid-columns: 3fr 1fr;
+        grid-template-columns: 3fr 1fr;
   }
   .trabajo .carta-trabajo {
-    top: 25px;
+    top: 35px;
     left: -170px;
-    max-width: 350px;
-    height: 450px;
   }
   .trabajo .texto-comun {
     margin-bottom: 40px;
@@ -581,7 +639,7 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   min-height: 450px;
-  background: rgba(255, 255, 255, 0.897);
+  background: white;
   position: relative;
 }
 
@@ -619,11 +677,7 @@ body {
   width: 90%;
 }
 
-.about .txt-vertical {
-  top: 185px;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 850px) {
   .about {
     display: -ms-grid;
     display: grid;
@@ -640,7 +694,6 @@ body {
     margin-left: 0;
   }
   .about .img-about {
-    background: black;
     display: block;
     position: relative;
     z-index: 2;
@@ -662,16 +715,29 @@ body {
   padding: 0;
   height: 250px;
   position: relative;
+  background: white;
+}
+
+.contenedor-img-body img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .contenedor-img-body:after {
   content: "";
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.685);
+  background: rgba(255, 255, 255, 0.726);
   position: absolute;
   left: 0;
   top: 0;
+}
+
+@media (min-width: 768px) {
+  .contenedor-img-body img {
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
 }
 
 .footer-principal {
@@ -687,22 +753,18 @@ body {
 }
 
 .footer-principal .logo {
-  background: red;
   height: 100px;
   width: 100px;
-  margin: 0 auto;
-}
-
-.footer-principal .descripcion-footer {
-  padding: 0px 0px 10px;
+  margin-right: auto;
 }
 
 .footer-principal .descripcion-footer {
   padding: 50px 0px 10px;
 }
 
-.footer-principal .mini-titulos {
+.footer-principal .mini-texto {
   text-align: center;
+  font-size: 0.9rem;
 }
 
 .footer-principal .lista-footer {
@@ -710,11 +772,12 @@ body {
 }
 
 .footer-principal .item-footer {
-  padding: 10px 0px;
+  padding: 5px 0px;
+  text-transform: capitalize;
+  color: #adadad;
 }
 
 .footer-principal .redes {
-  background: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -731,6 +794,17 @@ body {
   list-style-type: none;
   width: 80%;
   max-width: 300px;
+}
+
+.footer-principal .link-red {
+  text-transform: capitalize;
+  color: white;
+  margin: 20px 0px 0px;
+}
+
+.footer-principal .mini-texto {
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 545px) {
@@ -751,8 +825,8 @@ body {
 
 @media (min-width: 768px) {
   .footer-principal {
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-columns: 0.7fr 1fr 1fr;
+        grid-template-columns: 0.7fr 1fr 1fr;
   }
   .footer-principal .nav-footer {
     -ms-grid-column: 3;
@@ -760,9 +834,12 @@ body {
     grid-column: 3 / 4;
     padding-top: 0px;
   }
-  .footer-principal .mini-titulos {
-    text-align: left;
-    margin-bottom: 20px;
+  .footer-principal .logo {
+    width: 150px;
+    height: 150px;
+  }
+  .footer-principal .link-red {
+    margin: 20px 0px;
   }
 }
 
@@ -770,11 +847,6 @@ body {
   .footer-principal {
     -ms-grid-columns: 2fr 1fr 1fr;
         grid-template-columns: 2fr 1fr 1fr;
-  }
-  .footer-principal .logo {
-    margin: 0 auto 0 0;
-    width: 150px;
-    height: 150px;
   }
   .footer-principal .descripcion-footer {
     padding: 0;
