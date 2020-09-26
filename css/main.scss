@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 img {
@@ -9,10 +10,9 @@ img {
   height: 100%;
   object-fit: cover;
 }
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 body {
   overflow-x: hidden;
@@ -99,11 +99,17 @@ body {
   padding: 7px 15px;
   border: 2px solid var(--color-principal);
   text-align: center;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+.btn-principal:hover {
+  background: black;
+  color: var(--color-principal);
+  border: 2px solid black;
 }
 .btn-secundario {
   max-width: 200px;
   margin: 0 auto;
-  background: var(--color-principal);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.7rem;
@@ -111,8 +117,15 @@ body {
   padding: 7px 15px;
   border: 2px solid var(--color-principal);
   @include flexbox(row, center, center);
-  color: rgb(255, 255, 255);
   box-shadow: 5px 5px 5px rgba(63, 63, 63, 0.356);
+  background: var(--color-principal);
+  color: white;
+  transition: all 100ms ease-in-out;
+  cursor: pointer;
+}
+.btn-secundario:hover {
+  background: black;
+  color: var(--color-principal);
 }
 //INICIO NAVEGACION PRINCIPAL
 
@@ -135,6 +148,11 @@ body {
     background: var(--color-titulos);
     margin: 3px 0px;
     transition: all 0.2s ease-in-out;
+  }
+  .hamburguesa:hover {
+    .linea-hamburguesa {
+      background: var(--color-principal);
+    }
   }
 }
 
@@ -168,6 +186,12 @@ body {
       text-transform: uppercase;
       font-size: 0.9rem;
       font-weight: 900;
+      transition: all 100ms ease-in-out;
+      cursor: pointer;
+    }
+    .links:hover {
+      background: var(--color-titulos);
+      color: white;
     }
   }
 }
@@ -338,12 +362,20 @@ body {
     }
     .item-marca {
       @include flexbox(row, center, center);
+      cursor: pointer;
     }
     .texto-fantasia {
       font-family: var(--fuente-fantasia);
       text-transform: uppercase;
       font-size: 3rem;
       color: rgb(156, 156, 156);
+      transition: all 200ms ease-in-out;
+    }
+    .item-marca:hover {
+      .texto-fantasia {
+        color: black;
+        font-size: 3.2rem;
+      }
     }
     .swiper-slider {
       display: grid;
