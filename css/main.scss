@@ -298,9 +298,10 @@ body {
 //INICIO OFERTAS
 
 .ofertas {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   background: rgb(235, 235, 235);
+  overflow: hidden;
   .img-principal {
     width: 100%;
     height: 450px;
@@ -371,6 +372,12 @@ body {
 
 @media (min-width: 660px) {
   .ofertas {
+    .swiper-container {
+      display: none;
+    }
+    .swiper-contenedor {
+      display: grid;
+    }
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 700px 200px;
@@ -700,4 +707,42 @@ body {
       padding: 0;
     }
   }
+}
+
+.swiper-container {
+  width: 100%;
+  position: relative;
+  overflow: visible !important;
+}
+.swiper-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
+.tablas {
+  .fuente-1 {
+    font-size: 4.3rem;
+    top: -20px;
+    left: 63px;
+  }
+}
+.swiper-pagination {
+  bottom: -70px !important;
+}
+.swiper-button-prev {
+  left: 30% !important;
+  top: 106% !important;
+  color: black !important;
+  font-size: 1.5rem;
+}
+
+.swiper-button-next {
+  right: 30% !important;
+  top: 106% !important;
+  color: black !important;
+  font-size: 1.5rem;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
 }

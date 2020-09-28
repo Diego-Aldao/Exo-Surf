@@ -1,8 +1,8 @@
 window.onload = () => {
   const nombreTabla = document.querySelectorAll(".texto-fantasia");
-  const fuenteUno = document.querySelector(".fuente-1");
+  const fuenteUno = document.querySelector(".fuente-1-desk");
   const slider = document.querySelector(".swiper-slider");
-  const sliderImagen = document.querySelector(".imgss");
+  const sliderImagen = document.querySelector(".img-principal-desk");
 
   nombreTabla.forEach((nombre) => {
     nombre.addEventListener("click", () => {
@@ -15,5 +15,17 @@ window.onload = () => {
       });
       sliderImagen.src = nombre.dataset.imagen;
     });
+  });
+
+  var swiper = new Swiper(".swiper-container", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 };
