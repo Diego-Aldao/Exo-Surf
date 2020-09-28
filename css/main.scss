@@ -746,3 +746,66 @@ body {
 .swiper-button-prev::after {
   content: "" !important;
 }
+
+//NAV MOVIL
+
+.nav-movil {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: red;
+  z-index: 5;
+  @include flexbox(column, flex-start, center);
+  background: black;
+  .btn-cerrar {
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+    @include flexbox(column, center, center);
+  }
+  .linea-cerrar {
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+  }
+  .linea-cerrar:nth-child(2) {
+    transform: rotate(-45deg);
+  }
+  .logo-movil {
+    width: 120px;
+    height: 120px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .contenido-nav-movil {
+    width: 100%;
+    @include flexbox(column, flex-start, center);
+  }
+  .link-movil {
+    padding: 5px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--color-principal);
+  }
+  .footer-nav {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-textos);
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-movil {
+    display: none;
+  }
+}

@@ -28,4 +28,31 @@ window.onload = () => {
       prevEl: ".swiper-button-prev",
     },
   });
+
+  const hamburguesa = document.querySelector(".hamburguesa");
+  const navMovil = document.querySelector(".nav-movil");
+  const btnCerrar = document.querySelector(".btn-cerrar");
+  const linksNav = document.querySelectorAll(".link-movil");
+
+  hamburguesa.addEventListener("click", () => {
+    gsap.to(navMovil, {
+      left: 0,
+      duration: 0.5,
+    });
+  });
+  btnCerrar.addEventListener("click", () => {
+    gsap.to(navMovil, {
+      left: "100%",
+      duration: 0.5,
+    });
+  });
+  linksNav.forEach((link) => {
+    link.addEventListener("click", () => {
+      gsap.to(navMovil, {
+        delay: 0.5,
+        left: "100%",
+        duration: 0.5,
+      });
+    });
+  });
 };
