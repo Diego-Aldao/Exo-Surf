@@ -20,10 +20,10 @@ a {
 }
 
 body {
+  min-width: 300px;
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: #ebebeb;
-  min-width: 300px;
 }
 
 .contenido-centrado {
@@ -43,9 +43,9 @@ body {
 }
 
 .mini-texto {
+  color: var(--color-principal);
   text-transform: uppercase;
   font-weight: 900;
-  color: var(--color-principal);
   text-align: left;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 700;
@@ -203,7 +203,7 @@ body {
 @media (min-width: 768px) {
   .nav-principal {
     height: 140px;
-    background: white;
+    background: #fff;
   }
   .nav-principal .logo {
     width: 90px;
@@ -354,10 +354,10 @@ body {
   .header-principal .btn-secundario {
     margin: 0;
   }
-  .header-principal .video-desktop {
+  .header-principal .img-header-desktop {
     display: block;
   }
-  .header-principal .video-desktop img {
+  .header-principal .img-header-desktop img {
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -488,7 +488,7 @@ body {
   .ofertas .swiper-container {
     display: none;
   }
-  .ofertas .swiper-contenedor {
+  .ofertas .contenedor-slide-desktop {
     display: -ms-grid;
     display: grid;
   }
@@ -532,7 +532,7 @@ body {
     color: black;
     font-size: 3.2rem;
   }
-  .ofertas .swiper-slider {
+  .ofertas .slide-desktop {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 350px 1fr;
@@ -655,7 +655,7 @@ body {
     -ms-grid-columns: 40px 1fr;
         grid-template-columns: 40px 1fr;
   }
-  .trabajo .swiper-slide {
+  .trabajo .contenido-trabajo {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 4fr 1fr;
@@ -690,7 +690,7 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .trabajo .swiper-slide {
+  .trabajo .contenido-trabajo {
     height: 550px;
     -ms-grid-columns: 3fr 1fr;
         grid-template-columns: 3fr 1fr;

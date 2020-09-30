@@ -5,6 +5,7 @@
   scroll-behavior: smooth;
 }
 
+//GLOBALES
 img {
   width: 100%;
   height: 100%;
@@ -15,10 +16,10 @@ a {
   text-decoration: none;
 }
 body {
+  min-width: 300px;
   overflow-x: hidden;
   font-family: var(--fuente-principal);
   background: rgb(235, 235, 235);
-  min-width: 300px;
 }
 
 .contenido-centrado {
@@ -36,9 +37,9 @@ body {
 }
 
 .mini-texto {
+  color: var(--color-principal);
   text-transform: uppercase;
   font-weight: 900;
-  color: var(--color-principal);
   text-align: left;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 700;
@@ -129,8 +130,8 @@ body {
   background: black;
   color: var(--color-principal);
 }
-//INICIO NAVEGACION PRINCIPAL
 
+//INICIO NAVEGACION PRINCIPAL
 .nav-principal {
   width: 100%;
   height: 70px;
@@ -158,12 +159,11 @@ body {
   }
 }
 
-//INICIO MEDIA QUERYS NAV PRINCIPAL
-
+//INICIO MEDIA QUERYS NAVEGACION PRINCIPAL
 @media (min-width: 768px) {
   .nav-principal {
     height: 140px;
-    background: white;
+    background: #fff;
     .logo {
       width: 90px;
       height: 90px;
@@ -199,7 +199,6 @@ body {
 }
 
 //INICIO HEADER PRINCIPAL
-
 .header-principal {
   display: grid;
   grid-template-columns: 1fr;
@@ -207,7 +206,6 @@ body {
   padding-bottom: 200px;
   background: url("/images/header-bg-movil.webp") center / cover no-repeat;
   position: relative;
-
   .descripcion-header {
     @include flexbox(column, flex-start, center);
     position: relative;
@@ -246,7 +244,6 @@ body {
 }
 
 //MEDIA QUERYS HEADER PRINCIPAL
-
 @media (min-width: 850px) {
   .header-principal {
     padding-top: 0;
@@ -271,7 +268,7 @@ body {
     .btn-secundario {
       margin: 0;
     }
-    .video-desktop {
+    .img-header-desktop {
       display: block;
       img {
         object-fit: cover;
@@ -295,8 +292,7 @@ body {
   }
 }
 
-//INICIO OFERTAS
-
+//INICIO SECCION OFERTAS
 .ofertas {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -368,14 +364,13 @@ body {
   }
 }
 
-//INICIO MEDIA QUERYS OFERTAS
-
+//INICIO MEDIA QUERYS SECCION OFERTAS
 @media (min-width: 660px) {
   .ofertas {
     .swiper-container {
       display: none;
     }
-    .swiper-contenedor {
+    .contenedor-slide-desktop {
       display: grid;
     }
     display: grid;
@@ -405,7 +400,7 @@ body {
         font-size: 3.2rem;
       }
     }
-    .swiper-slider {
+    .slide-desktop {
       display: grid;
       grid-template-columns: 350px 1fr;
       grid-template-rows: 200px 1fr 180px;
@@ -436,7 +431,6 @@ body {
     }
   }
 }
-
 @media (min-width: 1244px) {
   .ofertas {
     grid-template-columns: 1fr 2fr;
@@ -451,7 +445,6 @@ body {
 }
 
 //INICIO SECCION TRABAJO
-
 .trabajo {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -488,11 +481,12 @@ body {
   }
 }
 
+//INICIO MEDIA QUERYS SECCION TRABAJO
 @media (min-width: 768px) {
   .trabajo {
     display: grid;
     grid-template-columns: 40px 1fr;
-    .swiper-slide {
+    .contenido-trabajo {
       display: grid;
       grid-template-columns: 4fr 1fr;
       grid-template-rows: 1fr;
@@ -520,7 +514,7 @@ body {
 
 @media (min-width: 1024px) {
   .trabajo {
-    .swiper-slide {
+    .contenido-trabajo {
       height: 550px;
       grid-template-columns: 3fr 1fr;
     }
@@ -536,7 +530,6 @@ body {
 }
 
 //INICIO SECCION ABOUT
-
 .about {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -563,6 +556,8 @@ body {
     width: 90%;
   }
 }
+
+//INICIO MEDIA QUERYS SECCION ABOUT
 
 @media (min-width: 850px) {
   .about {
@@ -595,7 +590,7 @@ body {
   }
 }
 
-//IMG-BODY
+//INICIO IMAGEN OLA ABOUT
 .contenedor-img-body {
   padding: 0;
   height: 250px;
@@ -614,6 +609,8 @@ body {
   left: 0;
   top: 0;
 }
+
+//INICIO QUERYS IMAGEN OLA ABOUT
 @media (min-width: 768px) {
   .contenedor-img-body {
     img {
@@ -623,7 +620,6 @@ body {
 }
 
 //INICIO FOOTER PRINCIPAL
-
 .footer-principal {
   background: black;
   color: white;
@@ -672,7 +668,6 @@ body {
 }
 
 //INICIO MEDIA QUERYS FOOTER PRINCIPAL
-
 @media (min-width: 545px) {
   .footer-principal {
     grid-template-columns: 1fr 1fr;
@@ -712,6 +707,7 @@ body {
   }
 }
 
+//PROPIEDADES CUSTOM SWIPER TABLAS
 .swiper-container {
   width: 100%;
   position: relative;
@@ -750,8 +746,7 @@ body {
   content: "" !important;
 }
 
-//NAV MOVIL
-
+//INICIO DESPLEGABLE NAV-MOVIL
 .nav-movil {
   position: fixed;
   top: 0;
@@ -806,6 +801,8 @@ body {
     color: var(--color-textos);
   }
 }
+
+//INICIO MEDIA QUERYS DESPLEGABLE NAV-PRINCIPAL
 
 @media (min-width: 768px) {
   .nav-movil {

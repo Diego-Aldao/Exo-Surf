@@ -1,7 +1,21 @@
 window.onload = () => {
+  //INICIO SWIPER.js
+  let swiper = new Swiper(".swiper-container", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      type: "fraction",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  //INICIO ANIMACIONES SLIDE TABLAS
   const nombreTabla = document.querySelectorAll(".texto-fantasia");
   const fuenteUno = document.querySelector(".fuente-1-desk");
-  const slider = document.querySelector(".swiper-slider");
+  const slider = document.querySelector(".slide-desktop");
   const sliderImagen = document.querySelector(".img-principal-desk");
 
   nombreTabla.forEach((nombre) => {
@@ -17,18 +31,7 @@ window.onload = () => {
     });
   });
 
-  var swiper = new Swiper(".swiper-container", {
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-
+  //INICIO DESPLEGABLE NAV-PRINCIPAL
   const hamburguesa = document.querySelector(".hamburguesa");
   const navMovil = document.querySelector(".nav-movil");
   const btnCerrar = document.querySelector(".btn-cerrar");
@@ -75,15 +78,14 @@ window.onload = () => {
         } //si no esta en la pantalla, termina la funcion
         entry.target.classList.add(nuevaClase);
 
-        observer.unobserve(entry.target); //para que las animaciones solo se ejecuten la primera vez que se entra en la seccion.
+        observer.unobserve(entry.target); //para que las animaciones solo se ejecuten SOLO la primera vez que se entra en la seccion.
       });
     },
     options);
     secciones.forEach((section) => {
-      observer.observe(section); //al usar querySelectorAll tengo un array con las secciones, y lo que quiero lograr es observar uno por uno
+      observer.observe(section);
     });
   };
-
   crearObservador(".animacion-uno", "final-uno");
   crearObservador(".animacion-dos", "final-dos");
   crearObservador(".animacion-tres", "final-tres");
