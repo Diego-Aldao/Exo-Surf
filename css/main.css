@@ -832,6 +832,10 @@ body {
   padding: 50px 0px 10px;
 }
 
+.footer-principal .nav-footer {
+  padding-top: 20px;
+}
+
 .footer-principal .mini-texto {
   text-align: center;
   font-size: 0.9rem;
@@ -1068,5 +1072,43 @@ body {
   .nav-movil {
     display: none;
   }
+}
+
+.animacion-uno {
+  opacity: 0;
+  bottom: -10px;
+  position: relative;
+}
+
+.animacion-dos {
+  opacity: 0;
+  left: -20px;
+  position: relative;
+}
+
+.animacion-tres {
+  opacity: 0;
+  right: -20px;
+  position: relative;
+}
+
+.final-uno,
+.final-dos,
+.final-tres {
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.final-uno {
+  bottom: 0px;
+}
+
+.final-dos {
+  left: 0px;
+}
+
+.final-tres {
+  right: 0px;
 }
 /*# sourceMappingURL=main.css.map */
